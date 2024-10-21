@@ -189,6 +189,7 @@ else
 endif
         CFLAGS += $(MINVERSION)
         CXXFLAGS += $(MINVERSION)
+        LDFLAGS += $(MINVERSION)
 
 	HAVE_SSE = 0
 
@@ -205,6 +206,10 @@ endif
 
         CC = cc -arch arm64 -isysroot $(IOSSDK)
         CXX = c++ -arch arm64 -isysroot $(IOSSDK)
+        MINVERSION = -mappletvos-version-min=11.0
+        CFLAGS += $(MINVERSION)
+        CXXFLAGS += $(MINVERSION)
+        LDFLAGS += $(MINVERSION)
 
 # Classic Platforms ####################
 # Platform affix = classic_<ISA>_<µARCH>
