@@ -1175,12 +1175,18 @@ unsigned retro_api_version(void)
 
 void *retro_get_memory_data(unsigned id)
 {
-   return NULL;
+   // maybe need low and high wram - can use id enum here
+   if(id == 0) {
+      return LowWram;
+   } else if (id == 1) {
+      return HighWram;
+   }
 }
 
 size_t retro_get_memory_size(unsigned id)
 {
-   return 0;
+   // both low and high are 0x100000
+   return 0x100000;
 }
 
 void retro_deinit(void)
