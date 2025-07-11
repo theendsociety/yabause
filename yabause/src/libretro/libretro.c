@@ -1118,7 +1118,7 @@ bool retro_load_game(const struct retro_game_info *info)
    yinit.mpegpath             = NULL;
    yinit.videoformattype      = VIDEOFORMATTYPE_NTSC;
    yinit.frameskip            = frameskip_enable;
-   yinit.clocksync            = 0;
+   yinit.clocksync            = 1;
    yinit.basetime             = 0;
 #ifdef HAVE_THREADS
    yinit.usethreads           = 1;
